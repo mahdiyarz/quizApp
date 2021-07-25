@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './widgets/question.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -32,19 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              alignment: Alignment.center,
-              child: Card(
-                elevation: 5,
-                child: Text(
-                  'my question is here',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
+            Question(),
             Column(
               children: [
                 Card(
