@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './widgets/answer.dart';
 import './widgets/question.dart';
 
 void main() {
@@ -35,26 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Question(),
-            Column(
-              children: [
-                Card(
-                  elevation: 3,
-                  child: Text('answers are here'),
-                ),
-                Card(
-                  elevation: 3,
-                  child: Text('answers are here'),
-                ),
-                Card(
-                  elevation: 3,
-                  child: Text('answers are here'),
-                ),
-                Card(
-                  elevation: 3,
-                  child: Text('answers are here'),
-                ),
-              ],
-            ),
+            Answer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
