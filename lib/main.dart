@@ -26,12 +26,54 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Training'),
-      ),
-      body: Center(
-        child: Text('Training hard here...'),
-      ),
-    );
+        appBar: AppBar(
+          title: Text('My Training - one'),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              alignment: Alignment.center,
+              child: Card(
+                elevation: 5,
+                child: Text(
+                  'my question is here',
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            Column(
+              children: [
+                Card(
+                  elevation: 3,
+                  child: Text('answers are here'),
+                ),
+                Card(
+                  elevation: 3,
+                  child: Text('answers are here'),
+                ),
+                Card(
+                  elevation: 3,
+                  child: Text('answers are here'),
+                ),
+                Card(
+                  elevation: 3,
+                  child: Text('answers are here'),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('corect ans'),
+                Text('wrong ans'),
+                Text('score'),
+              ],
+            )
+          ],
+        ));
   }
 }
