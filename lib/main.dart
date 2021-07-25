@@ -34,11 +34,18 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text('My Training - one'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Question(),
-            Answer(),
-            ScoreBoard(),
+            Container(
+              height: 300,
+              child: Column(
+                children: [
+                  Question(),
+                  Answer(),
+                ],
+              ),
+            ),
+            Container(height: 300, child: ScoreBoard()),
           ],
         ));
   }
