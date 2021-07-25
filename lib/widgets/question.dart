@@ -6,19 +6,19 @@ class Question extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       height: 100,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-      ),
       child: Card(
         color: Theme.of(context).primaryColorDark,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 5,
-        child: Center(
-          child: Text(
-            'What\'s your name exactlly?',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+        child: Container(
+          child: Center(
+            child: Text(
+              'What\'s your name exactlly?',
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
