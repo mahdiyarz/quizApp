@@ -3,25 +3,21 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Card(
-          elevation: 3,
-          child: Text('answers are here'),
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(10),
+      child: ListTile(
+        leading: CircleAvatar(
+          child: Text('1'),
         ),
-        Card(
-          elevation: 3,
-          child: Text('answers are here'),
+        title: Text(
+          'answers are here',
+          textAlign: TextAlign.justify,
+          style: TextStyle(
+            fontSize: 20,
+          ),
         ),
-        Card(
-          elevation: 3,
-          child: Text('answers are here'),
-        ),
-        Card(
-          elevation: 3,
-          child: Text('answers are here'),
-        ),
-      ],
+      ),
     );
   }
 }
