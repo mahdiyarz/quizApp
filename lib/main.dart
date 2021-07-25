@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './widgets/answer.dart';
 import './widgets/question.dart';
+import './widgets/score_board.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,14 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Question(),
             Answer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('corect ans'),
-                Text('wrong ans'),
-                Text('score'),
-              ],
-            )
+            ScoreBoard(),
           ],
         ));
   }
