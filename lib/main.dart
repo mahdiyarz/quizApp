@@ -28,13 +28,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int indexApp = 0;
-  void choseAnswer() {
-    for (int i = 0; indexApp < ourData.length; i++) {
-      setState(() {
-        indexApp = indexApp + 1;
-      });
-    }
+  int _indexApp = 0;
+  void _choseAnswer() {
+    setState(() {
+      _indexApp = _indexApp + 1;
+      // print(_indexApp);
+    });
   }
 
   @override
@@ -49,8 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 660,
             child: Column(
               children: [
-                Question(indexApp),
-                Answer(),
+                Question(_indexApp),
+                ...(ourData[_indexApp].answers as List<Map<String, Object>>)
+                    .map((e) {
+                  return Answer(_choseAnswer, e['textAns']);
+                }).toList(),
               ],
             ),
           ),
