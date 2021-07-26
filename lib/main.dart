@@ -37,6 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
+              child: Text('test'),
+            ),
+            Container(
               height: 300,
               child: Column(
                 children: [
