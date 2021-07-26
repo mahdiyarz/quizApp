@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../data.dart';
+
 class Question extends StatelessWidget {
+  final int indexApp;
+  Question(this.indexApp);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,9 +18,10 @@ class Question extends StatelessWidget {
         child: Container(
           child: Center(
             child: Text(
-              'What\'s your name exactlly?',
+              ourData[indexApp].question as String,
+              textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 23,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),

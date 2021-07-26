@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './widgets/answer.dart';
 import './widgets/question.dart';
 import './widgets/score_board.dart';
+import './data.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,6 +28,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int indexApp = 0;
+  void choseAnswer() {
+    for (int i = 0; indexApp < ourData.length; i++) {
+      setState(() {
+        indexApp = indexApp + 1;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 660,
             child: Column(
               children: [
-                Question(),
+                Question(indexApp),
                 Answer(),
               ],
             ),
