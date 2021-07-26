@@ -55,37 +55,23 @@ class ScoreBoard extends StatelessWidget {
       padding: EdgeInsets.all(10),
       children: [
         _biuldContainer(
-          _biuldGridTile('Correct Ans', '50') as Widget,
+          _biuldGridTile(
+            'Correct Ans',
+            '50',
+          ) as Widget,
         ) as Widget,
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.amber.withOpacity(0.4),
-                Colors.deepOrange,
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.circular(50),
-          ),
-          padding: const EdgeInsets.all(10),
-          child: GridTile(
-            child: Text('Wrong'),
-            footer: GridTileBar(
-              title: Text('50'),
-            ),
-          ),
-        ),
-        GridTile(
-          header: Text('Score'),
-          child: Center(
-            child: Text(
-              '50',
-              style: TextStyle(backgroundColor: Colors.amber),
-            ),
-          ),
-        ),
+        _biuldContainer(
+          _biuldGridTile(
+            'Wrong Ans',
+            '30',
+          ) as Widget,
+        ) as Widget,
+        _biuldContainer(
+          _biuldGridTile(
+            'Score',
+            '600',
+          ) as Widget,
+        ) as Widget,
       ],
     );
   }
