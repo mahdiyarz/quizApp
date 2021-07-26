@@ -14,7 +14,10 @@ class ScoreBoard extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(50),
       ),
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.only(
+        top: 12,
+        bottom: 5,
+      ),
       child: child,
     );
   }
