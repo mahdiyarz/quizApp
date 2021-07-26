@@ -75,8 +75,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               )
-            : Center(
-                child: Text('Finish'),
+            : Column(
+                children: [
+                  Center(
+                    child: Text('Finish'),
+                  ),
+                  Container(
+                    height: 90,
+                    child: ScoreBoard(_totalScore, _correctScore, _wrongScore),
+                  ),
+                ],
               ));
   }
 }
