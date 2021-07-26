@@ -15,8 +15,8 @@ class ScoreBoard extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
       ),
       padding: const EdgeInsets.only(
-        top: 12,
-        bottom: 5,
+        top: 5,
+        bottom: 0,
       ),
       child: child,
     );
@@ -39,6 +39,7 @@ class ScoreBoard extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
+            color: Colors.black54,
           ),
           textAlign: TextAlign.center,
         ),
@@ -59,19 +60,19 @@ class ScoreBoard extends StatelessWidget {
       children: [
         _biuldContainer(
           _biuldGridTile(
-            'Correct Ans',
+            'Correct     ' + '     Answers',
             '50',
           ) as Widget,
         ) as Widget,
         _biuldContainer(
           _biuldGridTile(
-            'Wrong Ans',
+            'Wrong      ' + '     Answers',
             '30',
           ) as Widget,
         ) as Widget,
         _biuldContainer(
           _biuldGridTile(
-            'Score',
+            'Total      ' + '      Score',
             '600',
           ) as Widget,
         ) as Widget,
