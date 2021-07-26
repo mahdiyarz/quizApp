@@ -39,29 +39,33 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Training - one'),
-      ),
-      body: Column(
-        children: [
-          Container(
-            height: 660,
-            child: Column(
-              children: [
-                Question(_indexApp),
-                ...(ourData[_indexApp].answers as List<Map<String, Object>>)
-                    .map((e) {
-                  return Answer(_choseAnswer, e['textAns']);
-                }).toList(),
-              ],
-            ),
-          ),
-          Container(
-            height: 90,
-            child: ScoreBoard(),
-          ),
-        ],
-      ),
-    );
+        appBar: AppBar(
+          title: Text('My Training - one'),
+        ),
+        body: _indexApp < ourData.length
+            ? Column(
+                children: [
+                  Container(
+                    height: 660,
+                    child: Column(
+                      children: [
+                        Question(_indexApp),
+                        ...(ourData[_indexApp].answers
+                                as List<Map<String, Object>>)
+                            .map((e) {
+                          return Answer(_choseAnswer, e['textAns']);
+                        }).toList(),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 90,
+                    child: ScoreBoard(),
+                  ),
+                ],
+              )
+            : Center(
+                child: Text('Finish'),
+              ));
   }
 }
