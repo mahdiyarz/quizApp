@@ -30,26 +30,26 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('My Training - one'),
-        ),
-        body: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              child: Text('test'),
+      appBar: AppBar(
+        title: Text('My Training - one'),
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: 660,
+            child: Column(
+              children: [
+                Question(),
+                Answer(),
+              ],
             ),
-            Container(
-              height: 300,
-              child: Column(
-                children: [
-                  Question(),
-                  Answer(),
-                ],
-              ),
-            ),
-            Container(height: 300, child: ScoreBoard()),
-          ],
-        ));
+          ),
+          Container(
+            height: 90,
+            child: ScoreBoard(),
+          ),
+        ],
+      ),
+    );
   }
 }
