@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ScoreBoard extends StatelessWidget {
-  Widget? _bulidContainer(Widget child) {
+  Widget? _biuldContainer(Widget child) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -19,6 +19,30 @@ class ScoreBoard extends StatelessWidget {
     );
   }
 
+  Widget? _biuldGridTile(String title, String number) {
+    return GridTile(
+      child: Text(
+        title,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+        textAlign: TextAlign.center,
+      ),
+      footer: GridTileBar(
+        title: Text(
+          number,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView(
@@ -30,28 +54,8 @@ class ScoreBoard extends StatelessWidget {
       ),
       padding: EdgeInsets.all(10),
       children: [
-        _bulidContainer(
-          GridTile(
-            child: Text(
-              'Correct Ans',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            footer: GridTileBar(
-              title: Text(
-                '50',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
+        _biuldContainer(
+          _biuldGridTile('Correct Ans', '50') as Widget,
         ) as Widget,
         Container(
           decoration: BoxDecoration(
