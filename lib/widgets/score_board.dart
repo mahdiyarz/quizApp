@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ScoreBoard extends StatelessWidget {
+  final int score;
+  final int correctScore;
+  final int wrongScore;
+  ScoreBoard(this.score, this.correctScore, this.wrongScore);
+
   Widget? _biuldContainer(Widget child) {
     return Container(
       decoration: BoxDecoration(
@@ -61,19 +66,19 @@ class ScoreBoard extends StatelessWidget {
         _biuldContainer(
           _biuldGridTile(
             'Correct     ' + '     Answers',
-            '50',
+            correctScore.toString(),
           ) as Widget,
         ) as Widget,
         _biuldContainer(
           _biuldGridTile(
             'Wrong      ' + '     Answers',
-            '30',
+            wrongScore.toString(),
           ) as Widget,
         ) as Widget,
         _biuldContainer(
           _biuldGridTile(
             'Total      ' + '      Score',
-            '600',
+            score.toString(),
           ) as Widget,
         ) as Widget,
       ],

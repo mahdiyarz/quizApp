@@ -30,10 +30,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _indexApp = 0;
   int _totalScore = 0;
+  int _correctScore = 0;
+  int _wrongScore = 0;
   void _choseAnswer(int choseScore) {
     setState(() {
       _indexApp = _indexApp + 1;
       _totalScore = _totalScore + choseScore;
+      if (choseScore == 50) {
+        _correctScore = _correctScore + 1;
+      } else {
+        _wrongScore = _wrongScore + 1;
+      }
       // print(_totalScore);
     });
   }
@@ -64,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Container(
                     height: 90,
-                    child: ScoreBoard(),
+                    child: ScoreBoard(_totalScore, _correctScore, _wrongScore),
                   ),
                 ],
               )
