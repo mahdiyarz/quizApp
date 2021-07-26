@@ -29,10 +29,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _indexApp = 0;
-  void _choseAnswer() {
+  int _totalScore = 0;
+  void _choseAnswer(int choseScore) {
     setState(() {
       _indexApp = _indexApp + 1;
-      // print(_indexApp);
+      _totalScore = _totalScore + choseScore;
+      // print(_totalScore);
     });
   }
 
@@ -53,7 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ...(ourData[_indexApp].answers
                                 as List<Map<String, Object>>)
                             .map((e) {
-                          return Answer(_choseAnswer, e['textAns']);
+                          return Answer(() => _choseAnswer(e['score'] as int),
+                              e['textAns']);
+                          // return Answer(_choseAnswer, e['textAns']);
                         }).toList(),
                       ],
                     ),

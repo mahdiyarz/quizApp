@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../data.dart';
-
 class Answer extends StatelessWidget {
   final choseAns;
   final myAns;
@@ -13,7 +11,7 @@ class Answer extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(10),
       child: ListTile(
-        onTap: choseAns,
+        onTap: () => choseAns(),
         leading: CircleAvatar(
           child: Text('1'),
         ),
