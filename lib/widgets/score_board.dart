@@ -6,8 +6,8 @@ class ScoreBoard extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Colors.amber.withOpacity(0.4),
-            Colors.deepOrange,
+            Colors.lightBlue.shade400.withOpacity(0.4),
+            Colors.blue,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
