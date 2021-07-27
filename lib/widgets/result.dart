@@ -15,6 +15,24 @@ class Result extends StatelessWidget {
     this.wrongScore,
   );
 
+  String get resultText {
+    String finalText;
+    if (correctScore == 3) {
+      finalText = 'WELL... It\'s seems you know every thing about me...';
+      return finalText;
+    } else if (correctScore == 2) {
+      finalText = 'OOOk! try more and find out any thing of me!';
+      return finalText;
+    } else if (correctScore == 1) {
+      finalText = 'oooo... Poor little! try more!';
+      return finalText;
+    } else if (correctScore == 0) {
+      finalText = 'You know nothing...?!!';
+      return finalText;
+    }
+    return resultText;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,7 +47,10 @@ class Result extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Congratulation... you finish this test finally!'),
-              Text('there is a result of test'),
+              Text(
+                resultText,
+                style: TextStyle(color: Colors.blueGrey),
+              ),
               OutlinedButton(
                   onPressed: resetApp,
                   child: Text(
