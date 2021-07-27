@@ -44,6 +44,15 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _resetApp() {
+    setState(() {
+      _indexApp = 0;
+      _totalScore = 0;
+      _correctScore = 0;
+      _wrongScore = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               _wrongScore,
             )
           : Result(
+              _resetApp,
               _totalScore,
               _correctScore,
               _wrongScore,

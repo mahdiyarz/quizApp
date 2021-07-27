@@ -6,8 +6,10 @@ class Result extends StatelessWidget {
   final int totalScore;
   final int correctScore;
   final int wrongScore;
+  final resetApp;
 
   Result(
+    this.resetApp,
     this.totalScore,
     this.correctScore,
     this.wrongScore,
@@ -29,7 +31,7 @@ class Result extends StatelessWidget {
               Text('Congratulation... you finish this test finally!'),
               Text('there is a result of test'),
               OutlinedButton(
-                  onPressed: () {},
+                  onPressed: resetApp,
                   child: Text(
                     'Do you want to try this test againe?',
                     style: TextStyle(
