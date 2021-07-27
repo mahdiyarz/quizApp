@@ -17,12 +17,28 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Center(
-          child: Text('Finish'),
-        ),
         Container(
           height: 90,
           child: ScoreBoard(totalScore, correctScore, wrongScore),
+        ),
+        Container(
+          height: 500,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Congratulation... you finish this test finally!'),
+              Text('there is a result of test'),
+              OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Do you want to try this test againe?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  )),
+            ],
+          ),
         ),
       ],
     );
