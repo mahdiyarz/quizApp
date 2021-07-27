@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './widgets/result.dart';
 import './widgets/quiz.dart';
-import './widgets/score_board.dart';
 import './data.dart';
 
 void main() {
@@ -47,27 +47,22 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('My Training - one'),
-        ),
-        body: _indexApp < ourData.length
-            ? Quiz(
-                _choseAnswer,
-                _indexApp,
-                _totalScore,
-                _correctScore,
-                _wrongScore,
-              )
-            : Column(
-                children: [
-                  Center(
-                    child: Text('Finish'),
-                  ),
-                  Container(
-                    height: 90,
-                    child: ScoreBoard(_totalScore, _correctScore, _wrongScore),
-                  ),
-                ],
-              ));
+      appBar: AppBar(
+        title: Text('My Training - one'),
+      ),
+      body: _indexApp < ourData.length
+          ? Quiz(
+              _choseAnswer,
+              _indexApp,
+              _totalScore,
+              _correctScore,
+              _wrongScore,
+            )
+          : Result(
+              _totalScore,
+              _correctScore,
+              _wrongScore,
+            ),
+    );
   }
 }
