@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './widgets/answer.dart';
-import './widgets/question.dart';
+import './widgets/quiz.dart';
 import './widgets/score_board.dart';
 import './data.dart';
 
@@ -52,28 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text('My Training - one'),
         ),
         body: _indexApp < ourData.length
-            ? Column(
-                children: [
-                  Container(
-                    height: 660,
-                    child: Column(
-                      children: [
-                        Question(_indexApp),
-                        ...(ourData[_indexApp].answers
-                                as List<Map<String, Object>>)
-                            .map((e) {
-                          return Answer(() => _choseAnswer(e['score'] as int),
-                              e['textAns']);
-                          // return Answer(_choseAnswer, e['textAns']);
-                        }).toList(),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 90,
-                    child: ScoreBoard(_totalScore, _correctScore, _wrongScore),
-                  ),
-                ],
+            ? Quiz(
+                _choseAnswer,
+                _indexApp,
+                _totalScore,
+                _correctScore,
+                _wrongScore,
               )
             : Column(
                 children: [
